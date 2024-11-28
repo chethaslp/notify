@@ -1,4 +1,5 @@
 ## Notify
+[![Notify Cron Workflow](https://github.com/chethaslp/notify/actions/workflows/main.yml/badge.svg)](https://github.com/chethaslp/notify/actions/workflows/main.yml)
 
 This app notifies all students of University College of Engineering, Kariavattom about University Notifications & Results when there is a change in the site.
 
