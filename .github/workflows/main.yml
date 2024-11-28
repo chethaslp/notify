@@ -6,16 +6,13 @@ on:
 jobs:
   cron:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./cron
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
           cache: 'npm'
-          cache-dependency-path: cron/package-lock.json
+          cache-dependency-path: package-lock.json
       - run: npm install
       - name: Create .env
         run: |
