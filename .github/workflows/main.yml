@@ -2,7 +2,7 @@ name:
   Notify Cron Workflow
 on:
   schedule:
-    - cron: "17 * * * *"
+    - cron: "0 * * * *"
 jobs:
   cron:
     runs-on: ubuntu-latest
