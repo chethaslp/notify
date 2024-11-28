@@ -52,7 +52,9 @@ async function cron() {
 
         res.forEach(ch => {
           let title = ch.querySelector('td:nth-child(2)').textContent.trim();
+          let att = ch.querySelector('a').getAttribute('href');
           
+          // Check if the title contains the name of the college for filtering out unnecessary updates
           const normalizedString = title.toLowerCase()
             .replace(/[\n\r]+/g, ' ')
             .replace(/\s+/g, ' ')
@@ -60,7 +62,7 @@ async function cron() {
 
           if(!(/university college of engineering/.test(normalizedString) || /ucek/.test(normalizedString))) return;
 
-          let att = ch.querySelector('a').getAttribute('href');
+          // Check if the attachment is a valid link
           if(!att || !att.startsWith('https://exams.keralauniversity.ac.in')) att = null;
 
           const mailOptions = {

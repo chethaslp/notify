@@ -115,7 +115,7 @@ table[class='body'] .article {
                       <td style="font-family: sans-serif; font-size: 14px; vertical-align: center;" valign="center">
                         <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px;"><a href="${url}">${name}</a></p>
                         <h3 style="color: #06090f; font-family: sans-serif; font-weight: 400; line-height: 1.4; margin: 0; margin-bottom: 30px;"><b>${title}</b></h3>
-                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; min-width: 100%; width: 100%;" width="100%">
+                        ${att && `<table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; min-width: 100%; width: 100%;" width="100%">
                           <tbody>
                             <tr>
                               <td align="left" style="font-family: sans-serif; font-size: 14px; vertical-align: center; padding-bottom: 15px;" valign="center">
@@ -130,7 +130,7 @@ table[class='body'] .article {
                               </td>
                             </tr>
                           </tbody>
-                        </table>
+                        </table>`}
                         <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px;">Note: This content may irrelevent/inaccurate as this is an automated mail. Please visit <a href="${url}" target="_blank" style="color: #ec0867; text-decoration: underline;">${url}</a> to view more.</p>
                         
                       </td>
