@@ -1,0 +1,20 @@
+{
+  "name": "cron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cron.js",
+  "scripts": {
+    "start": "node cron.js"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.46.2",
+    "axios": "^1.5.0",
+    "dotenv": "^16.3.1",
+    "firebase": "^10.3.1",
+    "node-html-parser": "^6.1.13",
+    "nodemailer": "^6.9.5"
+  }
+}

@@ -1,0 +1,28 @@
+name:
+  Notify Cron Workflow
+on:
+  schedule:
+    - cron: "0 * * * *"
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./cron
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          cache: 'npm'
+          cache-dependency-path: cron/package-lock.json
+      - run: npm install
+      - name: Create .env
+        run: |
+          touch .env
+          echo EM_ID=${{ secrets.EM_ID }} >> .env
+          echo EM_PW=${{ secrets.EM_PW }} >> .env
+          echo SUPABASE_URL=${{ secrets.SUPABASE_URL }} >> .env
+          echo SUPABASE_KEY=${{ secrets.SUPABASE_KEY }} >> .env
+      - name: Run script
+        run: npm start
