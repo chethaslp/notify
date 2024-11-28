@@ -88,17 +88,7 @@ async function cron() {
 }
 
 
+
+// Run the cron job
+// This will be run every 4 hours everyday
 cron();
-
-
-
-{/* <tr class="displayList" style="line-height:25px">
-					
-					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
-					<td valign="top">Third Semester B.Tech. (2020 Scheme  Candidates of University College
-of Engineering, Kariavattom Regular (2023 Admission) &amp; Supplementary (2020 Admission to 2022
-Admission) Degree Examination, December 2024&nbsp;&nbsp;
-					<td> <a href="https://exams.keralauniversity.ac.in/Images/Notification/2024/11/25749.pdf" 
-					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
- 
-								<tr class="tableHeading" ><td colspan="4" style="padding-left:10px">Published on 25/11/2024</td></tr> */}
