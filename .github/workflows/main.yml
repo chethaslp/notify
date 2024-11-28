@@ -2,7 +2,7 @@ name:
   Notify Cron Workflow
 on:
   schedule:
-    - cron: "0 */4 * * *"
+    - cron: "17 * * * *"
 jobs:
   cron:
     runs-on: ubuntu-latest
@@ -19,6 +19,7 @@ jobs:
           touch .env
           echo EM_ID=${{ secrets.EM_ID }} >> .env
           echo EM_PW=${{ secrets.EM_PW }} >> .env
+          echo TO_EMAIL=${{ secrets.TO_EMAIL }} >> .env  
           echo SUPABASE_URL=${{ secrets.SUPABASE_URL }} >> .env
           echo SUPABASE_KEY=${{ secrets.SUPABASE_KEY }} >> .env
       - name: Run script
