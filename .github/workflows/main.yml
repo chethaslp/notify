@@ -2,7 +2,7 @@ name:
   Notify Cron Workflow
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "6 * * * *"
 jobs:
   cron:
     environment: "Notify - cron"
