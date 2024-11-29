@@ -149,7 +149,7 @@ table[class='body'] .article {
                   <td class="content-block" style="font-family: sans-serif; vertical-align: center; padding-bottom: 10px; padding-top: 10px; color: #9a9ea6; font-size: 12px; text-align: center;" valign="center" align="center">
                     <span class="apple-link" style="color: #9a9ea6; font-size: 12px; text-align: center;">University College of Engineering, Kariavattom</span>
                     <br>
-                    Powered by <a href style="text-decoration: underline; color: #9a9ea6; font-size: 12px; text-align: center;">Notify.</a> 
+                    Powered by <a href="https://github.com/chethaslp/notify" style="text-decoration: underline; color: #9a9ea6; font-size: 12px; text-align: center;">Notify.</a> 
                   </td>
                 </tr>
                 <tr>
