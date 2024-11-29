@@ -16,7 +16,7 @@ This app notifies about University Notifications & Results when there is a chang
 
 #### How it works?
 
-Notify frequently crawls (every 4 hrs) the above website for updates in it's content.
+Notify frequently crawls (every 4 hrs) the above websites for updates in it's content.
 If an update is found, it checks for specific keywords("ucek" or "university college of engineering" in it's title) to filter out irrelevent notifications.
 
 The update is then cutely compiled into an email template, which is sent to a preconfigured Google Groups mail.
