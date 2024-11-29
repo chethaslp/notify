@@ -1,8 +1,8 @@
-name:
-  Notify Cron Workflow
+name: Notify Cron Workflow
 on:
   schedule:
-    - cron: "13 * * * *"
+    - cron: "11 * * * *"
+  workflow_dispatch:
 jobs:
   cron:
     environment: "Notify - cron"
@@ -17,9 +17,9 @@ jobs:
       - run: npm install
       - name: Run script
         env:
-          EM_ID : ${{ secrets.EM_ID }}
-          EM_PW : ${{ secrets.EM_PW }}
-          TO_EMAIL : ${{ secrets.TO_EMAIL }}
-          SUPABASE_URL : ${{ secrets.SUPABASE_URL }}
-          SUPABASE_KEY : ${{ secrets.SUPABASE_KEY }}
+          EM_ID: ${{ secrets.EM_ID }}
+          EM_PW: ${{ secrets.EM_PW }}
+          TO_EMAIL: ${{ secrets.TO_EMAIL }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: npm start
