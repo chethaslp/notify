@@ -5,6 +5,7 @@ on:
     - cron: "0 * * * *"
 jobs:
   cron:
+    environment: "Notify - cron"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -14,13 +15,11 @@ jobs:
           cache: 'npm'
           cache-dependency-path: package-lock.json
       - run: npm install
-      - name: Create .env
-        run: |
-          touch .env
-          echo EM_ID=${{ secrets.EM_ID }} >> .env
-          echo EM_PW=${{ secrets.EM_PW }} >> .env
-          echo TO_EMAIL=${{ secrets.TO_EMAIL }} >> .env  
-          echo SUPABASE_URL=${{ secrets.SUPABASE_URL }} >> .env
-          echo SUPABASE_KEY=${{ secrets.SUPABASE_KEY }} >> .env
       - name: Run script
+        env:
+          EM_ID : ${{ secrets.EM_ID }}
+          EM_PW : ${{ secrets.EM_PW }}
+          TO_EMAIL : ${{ secrets.TO_EMAIL }}
+          SUPABASE_URL : ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY : ${{ secrets.SUPABASE_KEY }}
         run: npm start
