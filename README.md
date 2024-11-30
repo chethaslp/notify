@@ -16,11 +16,18 @@ This app notifies about University Notifications & Results when there is a chang
 
 #### How it works?
 
-Notify frequently crawls (every 3 hrs) the above websites for updates in it's content.
+Notify frequently crawls the above websites for updates in it's content.
 If an update is found, it checks for specific keywords("ucek" or "university college of engineering" in it's title) to filter out irrelevent notifications.
 
 The update is then cutely compiled into an email template, which is sent to a preconfigured Google Groups mail.
 All students of the college are added to the google group which then handles the distribution of mail to everyone's inboxes.
+
+
+> Cron frquency is optimised for keralauniversity.ac.in's update timings, usually during office hours. Runs for:
+ > - every 3 hours, between 00:00 and 10:00, 
+ > - every hour for 10:00 through 18:00, 
+ > - and every 3 hours, between 18:00 and 23:00
+
 
 
 #### How to deploy your own notify?
@@ -36,7 +43,7 @@ For deployment:
       * SUPABASE_URL : Supabase URL 
       * SUPABASE_KEY : Supabase Service Key
       * TO_EMAIL : Receiver's eMail ID (Google Group eMailID)
-  3. That's it. Github will automatically identify the actions and executes it every 3 hrs.
+  3. That's it. Github will automatically identify the actions and executes it every 4 hrs.
 
 
 #### This repo is open for contributions, feel free to improve it.
