@@ -3,6 +3,8 @@ import axios from "axios";
 import { createClient } from '@supabase/supabase-js';
 import { template } from "./template.js";
 import { parse } from 'node-html-parser';
+import { readPdfText } from 'pdf-text-reader';
+
 import 'dotenv/config'
 
 if(!process.env.SUPABASE_URL) throw new Error("Please set env vars to continue.");
@@ -32,7 +34,7 @@ async function cron() {
 
     if(!site.data) {
       await supabase.from('sites').update({data: latestSiteData.data, last_checked: new Date()}).match({url: site.url});
-      console.log("Initial data added for: " + site.url);
+      console.log(site.url + ": Initial data added.") ;
     }else {
       const latestParsed = parse(latestSiteData.data);
       const cacheParsed = parse(site.data);
@@ -48,9 +50,10 @@ async function cron() {
     });
 
       if(res.length > 0) {
+        console.log(site.url + ": Content Changed.");
         await supabase.from('sites').update({data: latestSiteData.data, last_checked: new Date()}).match({url: site.url});
 
-        res.forEach(ch => {
+        res.forEach(async ch => {
           let title = ch.querySelector('td:nth-child(2)').textContent.trim();
           let att = ch.querySelector('a').getAttribute('href');
           
@@ -59,8 +62,17 @@ async function cron() {
             .replace(/[\n\r]+/g, ' ')
             .replace(/\s+/g, ' ')
             .trim();
-
-          if(!(/university college of engineering/.test(normalizedString) || /ucek/.test(normalizedString))) return;
+          
+          if(/b.tech/.test(normalizedString)){
+            if(!(/2020 scheme/.test(normalizedString))) {
+              // If the title does not contain the 2020 scheme, check it's attachment for the keyword
+              console.log(site.url + ": Checking attachment : " + att);
+              const pdfText = await readPdfText({url: att});
+              if (!(/2020 scheme/.test(pdfText.toLowerCase()) && /b.tech/.test(pdfText.toLowerCase()))) {
+                return
+              }
+            }
+          }else return;
 
           // Check if the attachment is a valid link
           if(!att || !att.startsWith('https://exams.keralauniversity.ac.in')) att = null;
@@ -68,22 +80,22 @@ async function cron() {
           const mailOptions = {
             from: 'Notify',
             to: process.env.TO_EMAIL,
-            subject: 'New Update from keralauniversity.ac.in!',
+            subject: `New Update from ${site.name}!`,
             text: 'A new update is available for the site: '+ site.url + '\n' + res.join("\n"),
             html: template(title, att, site.url, site.name)
           }
 
-          console.log("New Update: " + title + " : " + site.url);
+          console.log(site.url + ": New Update : " + title);
           tr.sendMail(mailOptions, function(error, info){
             if (error) {
               console.log("Email NOT sent: " + error.code);
             } else {
-              console.log('Email sent [CHANGED]: ' + mailOptions.to + ' : '+ site.url);
+              console.log(site.url + ': Email sent [CHANGED] to ' + mailOptions.to);
             }
           });
         });
       }else{
-        console.log("No updates found: "+ site.url)
+        console.log(site.url + ": No Content Changes. ")
       }
     }
   });

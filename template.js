@@ -154,7 +154,7 @@ table[class='body'] .article {
                 </tr>
                 <tr>
                   <td class="content-block powered-by" style="font-family: sans-serif; vertical-align: center; padding-bottom: 10px; padding-top: 10px; color: #9a9ea6; font-size: 12px; text-align: center;" valign="center" align="center">
-                    Build with 💖 by <a href="https://github.com/chethaslp" style="color: #9a9ea6; font-size: 12px; text-align: center; text-decoration: none;">CLP</a>
+                    Built with 💖 by <a href="https://github.com/chethaslp" style="color: #9a9ea6; font-size: 12px; text-align: center; text-decoration: none;">@clp</a>
                   </td>
                 </tr>
               </table>

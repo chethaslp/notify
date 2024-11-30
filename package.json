@@ -15,6 +15,7 @@
     "dotenv": "^16.3.1",
     "firebase": "^10.3.1",
     "node-html-parser": "^6.1.13",
-    "nodemailer": "^6.9.5"
+    "nodemailer": "^6.9.5",
+    "pdf-text-reader": "^5.1.0"
   }
 }
