@@ -17,7 +17,7 @@ This app notifies about University Notifications & Results when there is a chang
 #### How it works?
 
 Notify frequently crawls the above websites for updates in it's content.
-If an update is found, it checks for specific keywords("ucek" or "university college of engineering" in it's title) to filter out irrelevent notifications.
+If an update is found, it checks for specific keywords("b.tech" and "2020 scheme" in it's title) to filter out irrelevent notifications.
 
 The update is then cutely compiled into an email template, which is sent to a preconfigured Google Groups mail.
 All students of the college are added to the google group which then handles the distribution of mail to everyone's inboxes.
