@@ -16,7 +16,7 @@ This app notifies about University Notifications & Results when there is a chang
 
 #### How it works?
 
-Notify frequently crawls (every 4 hrs) the above websites for updates in it's content.
+Notify frequently crawls (every 3 hrs) the above websites for updates in it's content.
 If an update is found, it checks for specific keywords("ucek" or "university college of engineering" in it's title) to filter out irrelevent notifications.
 
 The update is then cutely compiled into an email template, which is sent to a preconfigured Google Groups mail.
@@ -36,7 +36,7 @@ For deployment:
       * SUPABASE_URL : Supabase URL 
       * SUPABASE_KEY : Supabase Service Key
       * TO_EMAIL : Receiver's eMail ID (Google Group eMailID)
-  3. That's it. Github will automatically identify the actions and executes it every 4 hrs.
+  3. That's it. Github will automatically identify the actions and executes it every 3 hrs.
 
 
 #### This repo is open for contributions, feel free to improve it.
