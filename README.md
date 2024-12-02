@@ -24,9 +24,9 @@ All students of the college are added to the google group which then handles the
 
 
 > Cron frquency is optimised for keralauniversity.ac.in's update timings, usually during office hours. Runs for:
- > - every 3 hours, between 00:00 and 10:00, 
+ > - every 4 hours, between 00:00 and 10:00, 
  > - every hour for 10:00 through 18:00, 
- > - and every 3 hours, between 18:00 and 23:00
+ > - and every 4 hours, between 18:00 and 23:00
 
 
 
