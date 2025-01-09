@@ -96,7 +96,7 @@ table[class='body'] .article {
             <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; width: 100%;" width="100%">
               <tr>
                 <td class="align-center" style="font-family: sans-serif; font-size: 14px; vertical-align: center; text-align: center;" valign="center" align="center">
-                  <a href="https://github.com/chethaslp" style="color: #ec0867; text-decoration: underline;"><img src="https://i.ibb.co/5YtR0GS/notify.png" height="100" alt="Notify" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"></a>
+                  <a href="https://github.com/chethaslp" style="color: #ec0867; text-decoration: underline;"><img src="https://raw.githubusercontent.com/chethaslp/notify/refs/heads/main/assets/notify.png" height="100" alt="Notify" style="border: none; -ms-interpolation-mode: bicubic; max-width: 100%;"></a>
                 </td>
               </tr>
             </table>

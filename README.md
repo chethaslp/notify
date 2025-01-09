@@ -1,5 +1,5 @@
 <p align="center">
-  <img src ="https://i.ibb.co/5YtR0GS/notify.png" alt="Notify" height=100/><br/>
+  <img src ="https://raw.githubusercontent.com/chethaslp/notify/refs/heads/main/assets/notify.png" alt="Notify" height=100/><br/>
   <sup>(Built for University College of Engineering, Kariavattom)</sup>
 </p>
 
