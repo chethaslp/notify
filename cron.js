@@ -23,7 +23,7 @@ async function cron() {
 
   const sites = await supabase.from('sites').select('*');
 
-  if(!sites.data || sites.data.length ==0){
+  if(sites.data.length ==0){
     console.log("No sites added.")
     return;
   }else console.log(`Checking ${sites.data.length} sites.`)
@@ -57,47 +57,25 @@ async function cron() {
             let title = ch.querySelector('td:nth-child(2)').textContent.trim();
             let att = ch.querySelector('a').getAttribute('href');
             
-            // Validate and normalize attachment URL
-            if(att && !att.startsWith('https://exams.keralauniversity.ac.in')) {
-              att = null;
-            }
-            
-            // Check if the title contains b.tech for filtering
+            // Check if the title contains the name of the college for filtering out unnecessary updates
             const normalizedString = title.toLowerCase()
               .replace(/[\n\r]+/g, ' ')
               .replace(/\s+/g, ' ')
               .trim();
             
-            if(!/b.tech/.test(normalizedString)) {
-              return; // Skip if not b.tech related
-            }
-            
-            // Check if title has 2020 or 2024 scheme
-            const hasSchemeInTitle = /2020 scheme/.test(normalizedString) || /2024 scheme/.test(normalizedString);
-            
-            if(!hasSchemeInTitle) {
-              // Title doesn't have scheme, need to check PDF
-              if(!att) {
-                console.log(site.url + ": No valid attachment to check, skipping: " + title);
-                return;
-              }
-              
-              console.log(site.url + ": Checking attachment for scheme: " + att);
-              try {
+            if(/b.tech/.test(normalizedString)){
+              if(!(/2020 scheme/.test(normalizedString))) {
+                // If the title does not contain the 2020 scheme, check it's attachment for the keyword
+                console.log(site.url + ": Checking attachment : " + att);
                 const pdfText = await readPdfText({url: att});
-                const pdfLower = pdfText.toLowerCase();
-                const hasSchemeInPdf = /2020 scheme/.test(pdfLower) || /2024 scheme/.test(pdfLower);
-                const hasBtechInPdf = /b.tech/.test(pdfLower);
-                
-                if(!(hasSchemeInPdf && hasBtechInPdf)) {
-                  console.log(site.url + ": PDF doesn't contain required scheme, skipping");
-                  return;
+                if (!(/2020 scheme/.test(pdfText.toLowerCase()) && /b.tech/.test(pdfText.toLowerCase()))) {
+                  return
                 }
-              } catch(error) {
-                console.log(site.url + ": Error reading PDF, skipping: " + error.message);
-                return;
               }
-            }
+            }else return;
+
+            // Check if the attachment is a valid link
+            if(!att || !att.startsWith('https://exams.keralauniversity.ac.in')) att = null;
 
             const mailOptions = {
               from: 'Notify',
