@@ -23,7 +23,7 @@ async function cron() {
 
   const sites = await supabase.from('sites').select('*');
 
-  if(sites.data.length ==0){
+  if(!sites.data || sites.data.length ==0){
     console.log("No sites added.")
     return;
   }else console.log(`Checking ${sites.data.length} sites.`)
@@ -63,12 +63,12 @@ async function cron() {
               .replace(/\s+/g, ' ')
               .trim();
             
-            if(/b.tech/.test(normalizedString)){
-              if(!(/2020 scheme/.test(normalizedString))) {
+            if(/b\.?tech/.test(normalizedString)){
+              if(!(/2020 scheme/.test(normalizedString) || /2024 scheme/.test(normalizedString))) {
                 // If the title does not contain the 2020 scheme, check it's attachment for the keyword
                 console.log(site.url + ": Checking attachment : " + att);
                 const pdfText = await readPdfText({url: att});
-                if (!(/2020 scheme/.test(pdfText.toLowerCase()) && /b.tech/.test(pdfText.toLowerCase()))) {
+                if (!((/2020 scheme/.test(pdfText.toLowerCase()) || /2024 scheme/.test(pdfText.toLowerCase())) && /b\.?tech/.test(pdfText.toLowerCase()))) {
                   return
                 }
               }
