@@ -1,0 +1,798 @@
+
+	
+
+	
+				
+	
+	
+	
+
+ 
+<!--script type="text/javascript"  src="https://exams.keralauniversity.ac.in/Js/JSLogin/__JSStudent.Valid.js"></script>
+<script type="text/javascript"  src="https://exams.keralauniversity.ac.in/Js/JSSCollege/__JSCollege.Valid.js"></script-->
+ <script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/jquery.min.js"></script>
+<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/JSCommon/__StudServiceajaxPage.js"></script> 
+
+
+
+<!--script type="text/javascript">
+function datePopulate(id)
+		{
+		//	$("input[type='text']").click(function()
+		
+		//alert(i);
+					var curr_id = id;
+					$(curr_id).datepick(
+					{
+						dateFormat: 'dd/mm/yyyy', 
+						yearRange: 'c-0:c-70',
+						prevText: '< M', 
+						todayText: 'M y', 
+						nextText: 'M >', 
+						commandsAsDateFormat: true
+					});		     	
+				
+			}
+function showAllAdmission(length)
+{
+var checkAll=document.getElementById("chkadmissionall");
+if(checkAll.checked==true)
+{
+for(var i=0;i<length;i++)
+{
+var check=document.getElementById("chkadmission"+i);
+check.checked=true;
+}
+}
+else
+{
+for(var i=0;i<length;i++)
+{
+var check=document.getElementById("chkadmission"+i);
+check.checked=false;
+}
+}
+ 
+}
+
+
+function showAll(length){
+ 
+var checkAll=document.getElementById("chkselectall");
+ 
+if(checkAll.checked==true)
+{
+for(var i=0;i<length;i++)
+{
+var check=document.getElementById("chkselect"+i);
+ 
+check.checked=true;
+}
+}
+else
+{
+for(var i=0;i<length;i++)
+{
+var check=document.getElementById("chkselect"+i);
+check.checked=false;
+}
+}
+ 
+}
+</script-->
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="icon"  media="all" type="image/gif/x-icon" href="https://exams.keralauniversity.ac.in/Images/animated_favicon1.gif">
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta name="description" content="Kerala university computer center." />
+		<meta name="keywords" content="kerala,university,kerala university computer center,computer center,student,college,marks,admission,registration,enrolment,marklist." />
+		<meta http-equiv="cache-control" content="no-cache"> <!-- tells browser not to cache -->
+		<meta http-equiv="expires" content="0"> <!-- says that the cache expires 'now' -->
+		<meta http-equiv="pragma" content="no-cache"> <!-- says not to use cached stuff, if there is any -->
+		<META HTTP-EQUIV="Expires" CONTENT="-1">
+		<title> University of Kerala</title>
+		<link href="https://exams.keralauniversity.ac.in/Css/kuccstyle.css" type="text/css" rel="stylesheet"/>
+		<link href="https://exams.keralauniversity.ac.in/Css/leftmenu.css" type="text/css" rel="stylesheet"/>	
+		<link type="text/css" href="https://exams.keralauniversity.ac.in/Css/jquery.datepick.css" rel="stylesheet"  />
+		<link type="text/css" href="https://exams.keralauniversity.ac.in/Css/jquery.datepick.css" rel="stylesheet"  />
+		<link rel="stylesheet" type="text/css" href="https://exams.keralauniversity.ac.in/Css/ddsmoothmenu.css" />
+		<link rel="stylesheet" type="text/css" href="https://exams.keralauniversity.ac.in/Css/ddsmoothmenu-v.css" />
+		<link href="https://exams.keralauniversity.ac.in/Css/leftmenu.css" type="text/css" rel="stylesheet"/>		
+		<link rel="stylesheet" type="text/css" href="https://exams.keralauniversity.ac.in/Css/pro_dropdown_2.css" />	
+</head>	
+<body style="width:100%;overflow:scroll;"  oncontextmenu="return false;">
+<div class="divtop">
+<center>
+<div class="divHeader">
+</div>
+</center>
+
+
+<center>
+<div class="divContainer">
+<div style="width:1152px">
+		<div class="divMenu"> 
+		
+<span class="preload1"></span>
+<span class="preload2"></span>
+<ul id="nav">
+    <li class="top"><a href="/" class="top_link"><span style="font-size:12px" class="fontStyle">Home</span></a></li>
+    	<li class="top"><a href="#" class="top_link"><span class="fontStyle" style="font-size:12px">Enrolment</span></a></li>
+		
+         	
+	<li class="top"><a href="https://exams.keralauniversity.ac.in/Login/stud_session.php" class="top_link"><span class="fontStyle" style="font-size:12px">Student</span></a></li>
+    <li class="top"><a href="https://exams.keralauniversity.ac.in/Login/chkLogin.php?log=1"  class="top_link"><span class="fontStyle" style="font-size:12px">College</span></a></li>
+    <li class="top"><a href="https://exams.keralauniversity.ac.in/Login/chkLogin.php?log=2"  class="top_link"><span class="fontStyle" style="font-size:12px">University Staff</span></a></li>
+	<li class="top"><a href="https://exams.keralauniversity.ac.in/ResultAnalysis/"   class="top_link"><span class="fontStyle" style="font-size:12px">Result Analysis</span></a></li>
+    <li class="top"><a href="https://exams.keralauniversity.ac.in/Login/check8"  class="top_link" ><span class="fontStyle" style="font-size:12px">Results</span></a></li>
+ <!--li class="top"><a href="https://exams.keralauniversity.ac.in/timetable.php"  class="top_link" target="_blank"><span class="fontStyle" style="font-size:12px">Time Table</span></a-->
+   <!--li class="top"><a href="http://research.keralauniversity.ac.in/indexcard/"  target="_blank"  class="top_link"><span class="fontStyle" style="font-size:12px">Index Card</span></a></li-->
+	<li class="top"><a href="https://exams.keralauniversity.ac.in/indexcard/"  class="top_link"><span class="fontStyle" style="font-size:12px">Index Card</span></a></li>
+    <li class="top"><a href="https://exams.keralauniversity.ac.in/Login/check9"  class="top_link"><span class="fontStyle" style="font-size:12px">Downloads</span></a></li>
+	<li class="top"><a href="https://exams.keralauniversity.ac.in/Login/check10"  class="top_link"><span class="fontStyle" style="font-size:12px">People</span></a></li>  
+    <li class="top"><a href="https://exams.keralauniversity.ac.in/Login/check11"  class="top_link"><span class="fontStyle" style="font-size:12px">About us</span></a></li>
+</ul>
+		</div>
+					<div class="divleftMenu">
+			
+<div class="suckerdiv1" align="left" >
+
+ <div style="padding-bottom:5px; min-height:85px; margin-bottom:5px; text-align:left;" >
+<b><a href="https://slcm.keralauniversity.ac.in" target="_blank" ><img src="https://exams.keralauniversity.ac.in/Images/SLCM.jpg"> </a></b> </div>
+
+<ul id="suckertree1" style="line-height:30px">
+
+
+<li style="margin-bottom:8px"> <div style="background-image:url(https://exams.keralauniversity.ac.in/Images/button.png);padding-bottom:5px;" class="importantLink">
+<b>&nbsp;Important Links</b> </div></li>
+<li><a href="http://www.keralauniversity.ac.in/news" target="_blank" style="border-top:none" ><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;What's New</a></li>
+<li><a href="http://www.keralauniversity.ac.in/news" target="_blank" ><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;Announcements</a></li>
+<li><a href="https://exams.keralauniversity.ac.in/Login/check1"><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;Notifications</a></li>
+<li><a href="https://exams.keralauniversity.ac.in/Login/check2"><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/>&nbsp;  Exam Fees </a></li>
+<li><a href="https://exams.keralauniversity.ac.in/Login/check3" ><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;Time Table</a></li>
+  <li><a href="https://www.keralauniversity.ac.in/press-release" target="_blank"><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;Press Release</a></li>
+<li><a href="https://exams.keralauniversity.ac.in/Login/check4"><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;Courses</a></li>
+				<li><a href="https://exams.keralauniversity.ac.in/Login/check5"><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;Colleges</a></li>
+
+		
+        	<!--li><a href="https://exams.keralauniversity.ac.in/Login/index.php?sitemap"><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;Sitemap</a></li-->
+            	<!--li><a href="https://exams.keralauniversity.ac.in/Login/index.php?faq"><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;FAQ</a></li-->
+                 <!--li><a href="https://exams.keralauniversity.ac.in/Login/check6"><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;Help Desk</a></li-->
+				
+                <!--li><a href="http://keralauniversity.ac.in/results.html" target="_blank"><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;Results</a></li-->
+
+           
+                <li><a href="http://research.keralauniversity.ac.in" target="_blank"><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;Research</a></li>
+                <li><a href="http://admissions.keralauniversity.ac.in" target="_blank"><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;Admissions</a></li>
+                
+                <li><a href="http://kucc.keralauniversity.ac.in" target="_blank"><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;Computer Centre</a></li>
+				
+				<li><a href="https://kuwallet.keralauniversity.ac.in" target="_blank"><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;Online Verification</a></li>
+ <li><a href="https://exams.keralauniversity.ac.in/Login/check7"><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;Contact Us</a></li>
+ 
+					<!--li><a href="https://exams.keralauniversity.ac.in/application/Application_for_improving_sessional.pdf" > <img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;CA Imp-S1S2</a></li-->
+						 <!--li><a href="https://exams.keralauniversity.ac.in/Login/index.php?imp=1"><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;CA Improvement</a></li-->
+				<!--li><a href="http://exams.keralauniversity.ac.in/Login/index.php?reset=1" target="_blank"><img src="https://exams.keralauniversity.ac.in/Images/button4.png" border="0"/> &nbsp;Password Changing</a></li-->
+                
+               
+
+</ul>   
+</div>
+
+
+ 
+			</div>
+			<div class="divContent">
+			<div id="wrapper">
+	<table width="100%" align="center">
+	<div id="canvas">
+	<h1 class="pagetitle1">
+	Results	</h1>
+	</div>
+	</table>
+				<table width="100%" border="0">
+			<tr>
+			<td align="right" colspan="4" style="color:#0000CC">
+			<a href=https://exams.keralauniversity.ac.in/Login/check8/==QOBRkVRpEbRdVOrJVYatmV><< </a> <a href=https://exams.keralauniversity.ac.in/Login/check8/==QOBRkVRpEbRdVOrF2aatmV >2 </a> <a href=https://exams.keralauniversity.ac.in/Login/check8/==QOBRkVRpEbRdVOrF2batmV >3 </a> <a href=https://exams.keralauniversity.ac.in/Login/check8/==QOBRkVRpEbRdVOrJFMktmV >4 </a>   <a href=https://exams.keralauniversity.ac.in/Login/check8/==QOBRkVRpEbRNnWxQWMjtmV> >> </a>			</td></tr>
+								<tr class="tableHeading" ><td colspan="4" style="padding-left:10px">Published on 21/01/2026</td></tr>
+										
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">FIRST SEMESTER MVA (PAINTING) DEGREE
+EXAMINATION, SEPTEMBER 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/99381.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">NINTH SEMESTER
+ FIVE YEAR MBA (INTEGRATED) DEGREE EXAMINATIONS
+MAY 2025
+REGULAR &amp; SUPPLEMENTARY (2015 SCHEME) &nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/29711.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.TECH DEGREE EXAMINATION, JUNE 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/33851.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.TECH DEGREE EXAMINATION, JUNE 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/34183.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								<tr class="tableHeading" ><td colspan="4" style="padding-left:10px">Published on 17/01/2026</td></tr>
+										
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">FIRST YEAR BBA
+DEGREE EXAMINATION AUGUST 2025
+(ANNUAL SCHEME - PRIVATE REGISTRATION)
+(2024 Admission - Regular, 2023 Admission 
+Improvement/Supplementary,
+2022 &amp; 2021 Admissions  Supplementary, 2016 To 2019
+Admissions  Mercy Chance)&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/68598.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">FOURTH SEMESTER
+BHMCT DEGREE EXAMINATION
+AUGUST 2025 
+&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/56508.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">FOURTH SEMESTER B.Com (Hearing Impaired) (162)
+DEGREE EXAMINATION July 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/41232.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								<tr class="tableHeading" ><td colspan="4" style="padding-left:10px">Published on 16/01/2026</td></tr>
+										
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.A (CBCSS) DEGREE EXAMINATION
+AUGUST 2025
+&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/81280.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.Sc. (CBCSS) DEGREE EXAMINATION
+AUGUST 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/26353.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								<tr class="tableHeading" ><td colspan="4" style="padding-left:10px">Published on 13/01/2026</td></tr>
+										
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.COM COMMERCE &amp; TOURISM AND
+TRAVEL MANAGEMENT (338) (CR-CBCS) DEGREE
+EXAMINATION
+AUGUST 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/93734.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER BBA
+DEGREE EXAMINATION AUGUST 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/21177.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER BBA LOGISTICS (196)
+DEGREE EXAMINATION AUGUST 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/20350.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER BHMCT
+DEGREE EXAMINATION
+(2018 SCHEME)
+ AUGUST 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/77547.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER POST
+GRADUATE DEGREE EXAMINATION
+AUGUST 2025
+ (SUPPLEMENTARY/IMPROVEMENT) - 
+M S W
+Disaster Management&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/95282.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								<tr class="tableHeading" ><td colspan="4" style="padding-left:10px">Published on 12/01/2026</td></tr>
+										
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">FIRST SEMESTER OF B.TECH
+(Part -Time Restructured  2008 Scheme)
+SUPPLEMENTARY/MERCY CHANCE DEGREE EXAMINATION  APRIL 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/32125.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER
+B.SC COMPUTER SCIENCE
+(CR-CBCS)
+ DEGREE EXAMINATION AUGUST 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/40422.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER
+BPA MUSIC, BPA MUSIC ( VEENA), BPA MUSIC (VIOLIN),
+BPA MUSIC(MRIDANGAM)/BPA
+(VOCAL/VEENA/VIOLIN/MRIDANGAM/DANCE) DEGREE
+EXAMINATION AUGUST 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/23066.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.Com (CBCS) DEGREE EXAMINATION
+AUGUST 2025 
+&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/62440.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.Sc. BIOCHEMISTRY &amp;
+INDUSTRIAL MICROBIOLOGY DEGREE EXAMINATION,
+AUGUST 2025 &nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/23501.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.Sc. BIOTECHNOLOGY
+(MULTIMAJOR) 2(b) DEGREE EXAMINATION, AUGUST 2025 
+&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/10957.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.Sc. BOTANY &amp;
+BIOTECHNOLOGY DEGREE EXAMINATION, AUGUST 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/34525.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">Second Semester B.Sc. Chemistry &amp; Industrial Chemistry (241) (CRCBCSS) Degree Examination, August 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/16844.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">Second Semester B.Sc. Environmental Science and Environment and
+Water Management (216) (CR-CBCSS) Degree Examination, August 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/68876.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">Second Semester B.Sc. Physics and Computer Application (328)
+(CR-CBCSS) Degree Examination, August 2025 &nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/56627.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.VOC. FOOD PROCESSING
+AND MANAGEMENT (356) DEGREE EXAMINATION, AUGUST 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/46188.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.VOC. FOOD PROCESSING (359)
+DEGREE EXAMINATION, AUGUST 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/52763.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.Voc. SOFTWARE
+DEVELOPMENT DEGREE EXAMINATION, AUGUST 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/76603.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.Voc. TOURISM &amp;
+HOSPITALITY MANAGEMENT DEGREE EXAMINATION,
+AUGUST 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/25439.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">Second Semester BA English and Communicative English (133) (CRCBCSS) Degree Examination, August 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/74018.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">Second Semester Bachelor of Social Work (BSW) (315) (CR-CBCSS)
+Degree Examination, August 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/16527.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">THIRD SEMESTER OF B.TECH
+(Part -Time Restructured  2008 Scheme)
+SUPPLEMENTARY/MERCY CHANCE DEGREE EXAMINATION JANUARY 2025 &nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/16341.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								<tr class="tableHeading" ><td colspan="4" style="padding-left:10px">Published on 09/01/2026</td></tr>
+										
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER
+BA JOURNALISM &amp; MASS COMMUNICATION(128/129) DEGREE
+EXAMINATION AUGUST 2025 &nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/73470.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER
+BACHELOR OF COMPUTER APPLICATION (BCA)
+(CR-CBCSS)
+ DEGREE EXAMINATION, AUGUST 2025 &nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/42679.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER
+BMS HOTEL MANAGEMENT DEGREE EXAMINATION
+AUGUST 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/28208.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.Com Commerce &amp; Hotel Management
+and Catering (339) (CR-CBCSS)
+DEGREE EXAMINATION August 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/81897.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.Com Commerce &amp; Tax Procedure and
+Practice (337) (CR-CBCSS)
+DEGREE EXAMINATION August 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/72793.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.COM COMMERCE WITH COMPUTER
+APPLICATION (138) (CRCBCS)
+DEGREEEXAMINATION, AUGUST 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/40338.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.Sc ELECTRONICS (340)
+(CR-CBCSS) DEGREE EXAMINATION, AUGUST 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/19617.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER BA MALAYALAM &amp; MASS
+COMMUNICATION DEGREE EXAMINATION (116)
+AUGUST 2025 &nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/46882.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								<tr class="tableHeading" ><td colspan="4" style="padding-left:10px">Published on 08/01/2026</td></tr>
+										
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">FIFTH SEMESTER
+INTEGRATED FIVE YEAR BA LLB/B.Com LLB/BBA LLB DEGREE
+EXAMINATION, JUNE 2025 (2021 Admission Onwards)&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/27344.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">FIFTH SEMESTER
+INTEGRATED FIVE YEAR BA LLB/B.Com LLB/BBA LLB DEGREE
+EXAMINATIONS, JUNE 2025(2011 to 2020 Admission)
+&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/43761.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SECOND SEMESTER B.A HONOURS DEGREE
+PROGRAMME IN ENGLISH LANGUAGE AND LITERATURE
+DEGREE EXAMINATION, AUGUST 2025
+(2020-2021 ADMISSION-SUPPLEMENTARY,2013-2019
+ADMISSION- MERCY CHANCE)&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/75564.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">Second Semester B.A Honours Degree Programme in English Language and
+Literature, August 2025 
+&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/95294.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								<tr class="tableHeading" ><td colspan="4" style="padding-left:10px">Published on 05/01/2026</td></tr>
+										
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SIXTH SEMESTER B.Com (Hearing Impaired) (162)
+DEGREE EXAMINATION July 2025
+&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/24037.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								<tr class="tableHeading" ><td colspan="4" style="padding-left:10px">Published on 03/01/2026</td></tr>
+										
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">THIRD SEMESTER
+B.TECH DEGREE EXAMINATION, APRIL 2025 -
+(2008 SCHEME)(MERCY CHANCE )
+(including Part Time candidates and 2003 Scheme Transitory candidates)
+&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2026/01/40690.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								<tr class="tableHeading" ><td colspan="4" style="padding-left:10px">Published on 30/12/2025</td></tr>
+										
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">FIRST,SECOND &amp;THIRD YEAR
+B.Sc.COMPUTER SCIENCE/BCA MERCY
+CHANCE(ANNUAL SCHEME) DEGREE
+EXAMINATION, APRIL 2025(SDE)&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2025/12/96370.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								<tr class="tableHeading" ><td colspan="4" style="padding-left:10px">Published on 29/12/2025</td></tr>
+										
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">FOURTH SEMESTER
+POST GRADUATE DEGREE EXAMINATION
+JUNE 2025
+M.A. Malayalam Language &amp; Literature
+(Regular and Supplementary)
+&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2025/12/81448.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								<tr class="tableHeading" ><td colspan="4" style="padding-left:10px">Published on 27/12/2025</td></tr>
+										
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">FOURTH SEMESTER B.Sc COMPUTER SCIENCE -
+HEARING IMPAIRED (161)
+DEGREE EXAMINATION, JULY 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2025/12/62679.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">SIXTH SEMESTER B.Sc COMPUTER SCIENCE -
+HEARING IMPAIRED (161)
+DEGREE EXAMINATION, JULY 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2025/12/12078.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+								
+					<tr class="displayList" style="line-height:25px">
+					
+					<td width="10px" valign="top"  style="padding-left:15px;padding-top:10px"><img src="https://exams.keralauniversity.ac.in/Images/darrvio.png"></td>
+					<td valign="top">THIRD SEMESTER M.Ed (TWO YEAR PROGRAMME  (2018
+SCHEME SUPPLEMENTARY) DEGREE EXAMINATION, JULY 2025&nbsp;&nbsp;
+					<td> <a href="https://exams.keralauniversity.ac.in/Images/Result/2025/12/55555.pdf" 
+					target="_blank" style="text-decoration:none;color:#CC0000" ><img src="https://exams.keralauniversity.ac.in/Images/downs.png"></a></td></tr>
+ 
+				<tr>
+			<td align="right" colspan="4" style="color:#0000CC">
+			<a href=https://exams.keralauniversity.ac.in/Login/check8/==QOBRkVRpEbRdVOrJVYatmV><< </a> <a href=https://exams.keralauniversity.ac.in/Login/check8/==QOBRkVRpEbRdVOrF2aatmV >2 </a> <a href=https://exams.keralauniversity.ac.in/Login/check8/==QOBRkVRpEbRdVOrF2batmV >3 </a> <a href=https://exams.keralauniversity.ac.in/Login/check8/==QOBRkVRpEbRdVOrJFMktmV >4 </a>   <a href=https://exams.keralauniversity.ac.in/Login/check8/==QOBRkVRpEbRNnWxQWMjtmV> >> </a>	</td></tr>
+
+	</table>
+	</div>
+	</div>
+					
+		
+</div>
+<div class="divBeforeFooter"><br><br></div>
+<div class="divFooter"><table align="center" width="100%">
+ 
+  <tr align="center"> 
+    <td valign="bottom" width="386"> 
+      <div align="center"><font face="Verdana" style="font-size:10px;" color="#858783">Copyright &copy; 2011 - 2026 University of Kerala. All Rights Reserved.</font><br clear="all"/>
+        <b><font face="Verdana" style="font-size:12px;" color="#858783">Computer Centre, University of Kerala</font></b></div>
+    </td>
+  </tr>
+  <tr align="center"><td> <font face="Verdana" style="font-size:10px;" color="#858783">This site is optimized for 1366 x 768 resolution and best viewed in Mozilla Firefox and Google Chrome</td></tr>
+
+
+</table>
+
+</div>
+</div>
+</center>
+</body>
+
+<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/JSLogin/calc.js"></script>
+<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/jquery-1.7.2.min.js"></script>
+<!-- script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/jquery-1.6.3.min.js"></script-->
+<!-- script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/jquery-1.4.2.min.js"></script -->
+<link type="text/css" href="https://exams.keralauniversity.ac.in/Css/jquery.datepick.css" rel="stylesheet"  />
+<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/jquery.datepick.js"></script> 
+<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/JSCommon/__common.Search.js"></script> 
+<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/JSCommon/__ajaxPage.js"></script> 
+<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/JSCommon/__additionalService.js"></script> 
+<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/jquery.min.js"></script>
+<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/JSCommon/__ajaxNewJQ.js"></script>
+<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/jquery.datepick.js"></script> 
+<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/JSCommon/_studentAjax.js"></script>  
+<!-- to prevent back button action of browser-->
+		<SCRIPT type="text/javascript">
+			window.history.forward();
+			function noBack() { window.history.forward(); }
+		</SCRIPT>
+		
+	<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/JSCommon/leftMenu.js"></script>			
+	<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/JSLogin/__JSStudent.Valid.js"></script>
+	<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/JSSCollege/__JSCollege.Valid.js"></script>
+	<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/JSCommon/__ajaxPage.js"></script>
+	<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/JSCommon/imageHandler.js"></script>		
+	<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/JSCommon/commonValidation.js"></script>
+	<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/JSCommon/leftMenu.js"></script>
+	<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/ddsmoothmenu.js"></script>
+	<script type="text/javascript" src="https://exams.keralauniversity.ac.in/Js/ddpowerzoomer.js"></script>
+	
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "smoothmenu1", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+ddsmoothmenu.init({
+	mainmenuid: "smoothmenu2", //Menu DIV id
+	orientation: 'v', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu-v', //class added to menu's outer DIV
+	//customtheme: ["#804000", "#482400"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+</script>
+
+</html>
+
