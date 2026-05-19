@@ -45,7 +45,7 @@ async function testRecognitionLogic(element, skipPdfCheck = true) {
     }
 
     // Check if title contains 2020 or 2024 scheme
-    if (/2020\s*scheme/.test(normalizedString) || /2024\s*scheme/.test(normalizedString)) {
+    if (/2020\s*scheme/.test(normalizedString) || /2025\s*scheme/.test(normalizedString)) {
       result.passed = true;
       result.reason = 'Title contains B.Tech and valid scheme (2020 or 2024)';
       return result;
@@ -66,7 +66,7 @@ async function testRecognitionLogic(element, skipPdfCheck = true) {
       const pdfText = await readPdfText({ url: att });
       const pdfLower = pdfText.toLowerCase();
       
-      if (((/2020\s*scheme/.test(pdfLower) || /2024\s*scheme/.test(pdfLower)) && /b\.?tech/.test(pdfLower))) {
+      if (((/2020\s*scheme/.test(pdfLower) || /2025\s*scheme/.test(pdfLower)) && /b\.?tech/.test(pdfLower))) {
         result.passed = true;
         result.reason = 'PDF contains B.Tech and valid scheme (2020 or 2024)';
       } else {
