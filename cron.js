@@ -80,7 +80,7 @@ async function cron() {
             const mailOptions = {
               from: 'Notify',
               to: process.env.TO_EMAIL,
-              subject: `New Update from ${site.name}!`,
+              subject: `New Update: ${site.name}!`,
               text: 'A new update is available for the site: '+ site.url + '\n' + res.join("\n"),
               html: template(title, att, site.url, site.name)
             }
@@ -96,7 +96,7 @@ async function cron() {
 
             // Mubot Integration
             const mubotPayload = {
-              "text": `New Update from ${site.name}!\n\n**${title}**\n\nSite: ${site.url}`,
+              "text": `New Update: ${site.name}!\n\n*${title}*\n\n${site.url}\n\n> Alerts from Notify`,
               "attachment": att ? att : null
             };
 
