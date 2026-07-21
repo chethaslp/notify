@@ -93,7 +93,21 @@ async function cron() {
                 console.log(site.url + ': Email sent [CHANGED] to ' + mailOptions.to);
               }
             });
-          });
+
+            // Mubot Integration
+            const mubotPayload = {
+              "text": `New Update from ${site.name}!\n\n**${title}**\n\nSite: ${site.url}`,
+              "attachment": att ? att : null
+            };
+
+            await axios.post(process.env.MUBOT_WEBHOOK, mubotPayload)
+              .then(response => {
+                console.log(site.url + ': Mubot notification sent');
+              })
+              .catch(error => {
+                console.error(site.url + ': Error sending Mubot notification:', error);
+              });
+            });
         }else{
           console.log(site.url + ": No Content Changes. ")
         }

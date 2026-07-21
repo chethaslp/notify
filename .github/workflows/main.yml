@@ -22,4 +22,5 @@ jobs:
           TO_EMAIL: ${{ secrets.TO_EMAIL }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          MUBOT_WEBHOOK: ${{ secrets.MUBOT_WEBHOOK }}
         run: npm start
