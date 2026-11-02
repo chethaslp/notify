@@ -113,7 +113,8 @@ async function cron() {
         }
       }
   } catch (error) {
-    console.log(site.url + "Site Unreachable. ");
+    console.error(error);
+    console.log(site.url + " : Site Unreachable. ");
   }
   });
 }
