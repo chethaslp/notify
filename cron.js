@@ -1,5 +1,6 @@
 import { createTransport }  from 'nodemailer/lib/nodemailer.js';
 import axios from "axios";
+import https from "node:https";
 import { createClient } from '@supabase/supabase-js';
 import { template } from "./template.js";
 import { parse } from 'node-html-parser';
@@ -10,6 +11,20 @@ import 'dotenv/config'
 if(!process.env.SUPABASE_URL) throw new Error("Please set env vars to continue.");
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
+
+const universityHttpsAgent = new https.Agent({
+  rejectUnauthorized: false
+});
+
+function getRequestConfig(url) {
+  const hostname = new URL(url).hostname;
+
+  // This server currently presents an incomplete certificate chain. Keep the
+  // exception limited to this known monitoring target.
+  return hostname === 'exams.keralauniversity.ac.in'
+    ? { httpsAgent: universityHttpsAgent }
+    : {};
+}
 
 async function cron() {
 
@@ -30,7 +45,7 @@ async function cron() {
 
   sites.data.forEach(async site => {
     try {
-      const latestSiteData = await axios.get(site.url);
+      const latestSiteData = await axios.get(site.url, getRequestConfig(site.url));
 
       if(!site.data) {
         await supabase.from('sites').update({data: latestSiteData.data, last_checked: new Date()}).match({url: site.url});
